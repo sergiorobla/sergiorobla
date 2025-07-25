@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* WebKit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000; /* color de fondo de la pista */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* color del scroll en sí */
+  border-radius: 6px;
+  border: 3px solid #000; /* espacio alrededor */
+}
+
+/* Para modo oscuro */
+body.dark ::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border: 3px solid #fff;
+}
