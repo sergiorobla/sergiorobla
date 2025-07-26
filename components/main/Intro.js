@@ -43,7 +43,7 @@ export default function Intro() {
           </Text>
           <Text
             className="text-white text-center xl:text-left w-full mt-5"
-            style={{ fontFamily: "Games", fontSize: 40 }}
+            style={{ fontFamily: "Games", fontSize: 30 }}
           >
             Desarrollador Full-Stack
           </Text>
