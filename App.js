@@ -28,6 +28,7 @@ export default function App() {
         sectionIndex: index,
         itemIndex: 0,
         animated: true,
+        viewOffset: 120,
       });
     }
   };

@@ -41,12 +41,12 @@ export default function Contact() {
 
         <Pressable
           onPress={handleSubmit}
-          className="bg-blue-600 py-3 px-4 rounded-xl mt-2"
+          className="bg-zinc-700 hover:bg-zinc-800 py-3 px-4 rounded-xl mt-2"
           style={({ pressed }) => ({
             opacity: pressed ? 0.8 : 1,
           })}
         >
-          <Text className="text-white text-center font-bold text-base">
+          <Text className="text-white text-center text-base">
             Enviar mensaje
           </Text>
         </Pressable>
