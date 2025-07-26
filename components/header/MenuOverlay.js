@@ -1,7 +1,12 @@
 import { View, Text, ScrollView, Pressable } from "react-native";
 import Animated, { FadeIn, FadeOut } from "react-native-reanimated";
 
-export default function MenuOverlay({ closeOverlays }) {
+export default function MenuOverlay({ closeOverlays, scrollToSection }) {
+  const goTo = (index) => {
+    closeOverlays();
+    setTimeout(() => scrollToSection(index), 100);
+  };
+
   return (
     <Animated.View
       entering={FadeIn.duration(300)}
@@ -11,25 +16,23 @@ export default function MenuOverlay({ closeOverlays }) {
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View
           style={{ backgroundColor: "rgba(0, 0, 0, 0.9)", flex: 1 }}
-          className="justify-center items-center"
+          className="justify-center items-center gap-5"
         >
-          <Pressable onPress={closeOverlays}>
-            <Text href="#inicio" className="text-white font-inter-light">
-              Inicio
-            </Text>
+          <Pressable onPress={() => goTo(0)}>
+            <Text className="text-white text-3xl font-inter-light">Inicio</Text>
           </Pressable>
-          <Pressable onPress={closeOverlays}>
-            <Text href="#projecto" className="text-white font-inter-light">
+          <Pressable onPress={() => goTo(1)}>
+            <Text className="text-white text-3xl font-inter-light">
               Proyectos
             </Text>
           </Pressable>
-          <Pressable onPress={closeOverlays}>
-            <Text href="#sobreMi" className="text-white font-inter-light">
+          <Pressable onPress={() => goTo(2)}>
+            <Text className="text-white text-3xl font-inter-light">
               Sobre mí
             </Text>
           </Pressable>
-          <Pressable onPress={closeOverlays}>
-            <Text href="#contacto" className="text-white font-inter-light">
+          <Pressable onPress={() => goTo(3)}>
+            <Text className="text-white text-3xl font-inter-light">
               Contacto
             </Text>
           </Pressable>

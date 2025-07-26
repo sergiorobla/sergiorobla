@@ -115,14 +115,13 @@ export default function FrequentQuestion() {
 
   return (
     <View
-    id="sobreMi"
+    className="bg-black"
       style={{
         width: "100%",
         paddingHorizontal: 24,
         paddingTop: 40,
         paddingBottom: 40,
         alignItems: "center",
-        backgroundColor: "transparent",
       }}
     >
       <Text

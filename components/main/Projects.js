@@ -58,7 +58,15 @@ export default function Projects() {
   }
 
   return (
-    <View id="projecto" className="p-4 pt-8 xl:pt-20">
+    <View
+      className="p-4 pt-8 xl:pt-20 w-full border-t border-white/30 bg-black rounded-t-3xl shadow-lg"
+      style={{
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 5,
+      }}
+    >
       {rows.map((row, rowIndex) => (
         <View
           key={rowIndex}

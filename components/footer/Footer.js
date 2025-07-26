@@ -5,7 +5,7 @@ const currentYear = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <View className="flex-row justify-around items-center pb-5">
+    <View className="flex-row justify-around items-center pb-5 bg-black">
       <Text className="text-white" style={{ fontFamily: "Inter" }}>
         <span className="border-r border-white/30 px-2">sergiorobla.es</span>
         <span className="px-2">{currentYear}</span>

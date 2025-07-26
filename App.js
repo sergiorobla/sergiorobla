@@ -1,6 +1,6 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, ImageBackground, View } from "react-native";
+import { SectionList, ImageBackground, View } from "react-native";
 import { useFonts } from "expo-font";
 import "./global.css";
 
@@ -8,7 +8,10 @@ import Header from "./components/header/Header";
 import SearchOverlay from "./components/header/SearchOverlay";
 import MenuOverlay from "./components/header/MenuOverlay";
 import Intro from "./components/main/Intro";
-import Page from "./components/main/Page";
+import Projects from "./components/main/Projects";
+import FrequentQuestion from "./components/main/FrequentQuestion";
+import Contact from "./components/main/Contact";
+import Footer from "./components/footer/Footer";
 
 const bgBackground = require("./assets/background-home.png");
 
@@ -16,6 +19,18 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const sectionListRef = useRef(null);
+
+  const scrollToSection = (index) => {
+    if (sectionListRef.current) {
+      sectionListRef.current.scrollToLocation({
+        sectionIndex: index,
+        itemIndex: 0,
+        animated: true,
+      });
+    }
+  };
 
   const mockData = [
     "React",
@@ -70,6 +85,34 @@ export default function App() {
     return null;
   }
 
+  const sections = [
+    {
+      title: "Inicio",
+      data: [""],
+      renderItem: () => <Intro />,
+    },
+    {
+      title: "Proyectos",
+      data: [""],
+      renderItem: () => <Projects />,
+    },
+    {
+      title: "Sobre mí",
+      data: [""],
+      renderItem: () => <FrequentQuestion />,
+    },
+    {
+      title: "Contacto",
+      data: [""],
+      renderItem: () => <Contact />,
+    },
+    {
+      title: "Footer",
+      data: [""],
+      renderItem: () => <Footer />,
+    },
+  ];
+
   return (
     <ImageBackground
       source={bgBackground}
@@ -103,15 +146,23 @@ export default function App() {
           toggleMenu={toggleMenu}
           toggleSearch={toggleSearch}
         />
-        <ScrollView
-          contentContainerStyle={{ flexGrow: 1 }}
-          className="flex-1"
+        <SectionList
+          ref={sectionListRef}
+          sections={sections}
+          keyExtractor={(_, index) => index.toString()}
+          renderItem={({ section }) => {
+            section.renderItem();
+          }}
+          stickySectionHeadersEnabled={false}
           showsVerticalScrollIndicator={false}
-        >
-          <Intro />
-          <Page />
-        </ScrollView>
-        {isMenuOpen && <MenuOverlay closeOverlays={closeOverlays} />}
+        />
+
+        {isMenuOpen && (
+          <MenuOverlay
+            closeOverlays={closeOverlays}
+            scrollToSection={scrollToSection}
+          />
+        )}
         {isSearchOpen && (
           <SearchOverlay
             searchQuery={searchQuery}
