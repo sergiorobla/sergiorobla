@@ -37,13 +37,13 @@ export default function Intro() {
         <View>
           <Text
             className="text-white text-center xl:text-left"
-            style={{ fontFamily: "Games", fontSize: textName }}
+            style={{ fontFamily: "Stacion", fontSize: textName }}
           >
             Sergio Robla
           </Text>
           <Text
             className="text-white text-center xl:text-left w-full mt-5"
-            style={{ fontFamily: "Games", fontSize: 30 }}
+            style={{ fontFamily: "Stacion", fontSize: 30 }}
           >
             Desarrollador Full-Stack
           </Text>

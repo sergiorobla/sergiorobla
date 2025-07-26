@@ -13,8 +13,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "inter-light": "Inter-Light",
+        "inter": "Inter",
         games: "Games",
+        stacion: "Stacion",
       },
     },
   },

@@ -27,8 +27,9 @@ export default function App() {
   ];
 
   const [fontsLoaded] = useFonts({
-    "Inter-Light": require("./assets/fonts/Inter-Light.ttf"),
+    Inter: require("./assets/fonts/Inter-Light.ttf"),
     Games: require("./assets/fonts/GamerStation.ttf"),
+    Stacion: require("./assets/fonts/Stacion-Regular.otf"),
   });
 
   useEffect(() => {
@@ -78,7 +79,7 @@ export default function App() {
           toggleSearch={toggleSearch}
         />
         <ScrollView
-          contentContainerStyle={{ flexGrow: 1, paddingBottom: 50 }}
+          contentContainerStyle={{ flexGrow: 1 }}
           className="flex-1"
           showsVerticalScrollIndicator={false}
         >

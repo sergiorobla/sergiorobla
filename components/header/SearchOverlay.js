@@ -24,6 +24,7 @@ export default function SearchOverlay({
               placeholder="Buscar..."
               placeholderTextColor="#ccc"
               className="bg-white/10 text-white px-4 py-3 pr-10 rounded-xl font-inter-light"
+              style={{ fontFamily: "Inter" }}
               value={searchQuery}
               onChangeText={setSearchQuery}
             />
