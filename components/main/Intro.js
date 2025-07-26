@@ -23,6 +23,7 @@ export default function Intro() {
   return (
     <>
       <View
+      id="inicio"
         className="w-full items-center justify-center flex-col xl:flex-row gap-10 px-10"
         style={{ marginTop: marginTop }}
       >

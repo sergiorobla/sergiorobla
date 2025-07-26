@@ -3,22 +3,14 @@ import { View, Image, Text } from "react-native";
 const projects = [
   {
     id: 1,
-    title: "xploraspain",
+    title: "cryptoinvert",
     description:
-      "Web creada como proyecto final de Bootcamp. Promueve el turismo rural en la España vacía, conectando a los usuarios con destinos poco conocidos y ayudando a revitalizar zonas despobladas.",
-    image: require("../../assets/images/projects/xplora/xplora.png"),
-    lang: ["Node.js", "Spring Boot", "React", "TypeScript"],
+      "Aplicación de inversión automática en criptomonedas. Usa IA para analizar datos en tiempo real y recomendar cuándo comprar o vender, optimizando decisiones financieras.",
+    image: require("../../assets/images/projects/invert/invert.png"),
+    lang: ["Python", "React", "JavaScript"],
   },
   {
     id: 2,
-    title: "conectat",
-    description:
-      "Plataforma ganadora del Hackathon “Tarragona Impulsa”. Permite a los ciudadanos reportar incidencias, proponer ideas y descubrir eventos locales para mejorar su ciudad de forma colaborativa.",
-    image: require("../../assets/images/projects/conectat/conectat.png"),
-    lang: ["React", "TypeScript"],
-  },
-  {
-    id: 3,
     title: "digitalizatumundo",
     description:
       "Web orientada a ayudar a pequeñas empresas a digitalizarse. Ofrece servicios de diseño y mejora de sitios web para aumentar su visibilidad online y competitividad en el mercado.  ",
@@ -26,12 +18,20 @@ const projects = [
     lang: ["React", "TypeScript"],
   },
   {
-    id: 4,
-    title: "cryptoinvert",
+    id: 3,
+    title: "conectat",
     description:
-      "Aplicación de inversión automática en criptomonedas. Usa IA para analizar datos en tiempo real y recomendar cuándo comprar o vender, optimizando decisiones financieras.",
-    image: require("../../assets/images/projects/invert/invert.png"),
-    lang: ["Python", "React", "JavaScript"],
+      "Plataforma ganadora del Hackathon “Tarragona Impulsa”. Permite a los ciudadanos reportar incidencias, proponer ideas y descubrir eventos locales para mejorar su ciudad de forma colaborativa.",
+    image: require("../../assets/images/projects/conectat/conectat.png"),
+    lang: ["React", "TypeScript"],
+  },
+  {
+    id: 4,
+    title: "xploraspain",
+    description:
+      "Web creada como proyecto final de Bootcamp. Promueve el turismo rural en la España vacía, conectando a los usuarios con destinos poco conocidos y ayudando a revitalizar zonas despobladas.",
+    image: require("../../assets/images/projects/xplora/xplora.png"),
+    lang: ["Node.js", "Spring Boot", "React", "TypeScript"],
   },
   {
     id: 5,
@@ -58,7 +58,7 @@ export default function Projects() {
   }
 
   return (
-    <View className="p-4 pt-8 xl:pt-20">
+    <View id="projecto" className="p-4 pt-8 xl:pt-20">
       {rows.map((row, rowIndex) => (
         <View
           key={rowIndex}

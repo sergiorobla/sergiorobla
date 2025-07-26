@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, ImageBackground } from "react-native";
+import { ScrollView, ImageBackground, View } from "react-native";
 import { useFonts } from "expo-font";
 import "./global.css";
 
@@ -55,6 +55,11 @@ export default function App() {
     if (newMenuState) setIsSearchOpen(false);
   };
 
+  const closeOverlays = () => {
+    setIsMenuOpen(false);
+    setIsSearchOpen(false);
+  };
+
   const toggleSearch = () => {
     const newSearchState = !isSearchOpen;
     setIsSearchOpen(newSearchState);
@@ -66,11 +71,31 @@ export default function App() {
   }
 
   return (
-    <>
-      <ImageBackground
-        source={bgBackground}
-        className="relative flex-1 mx-auto w-full h-full bg-[#0F28F2]/50 overflow-hidden select-none"
-      >
+    <ImageBackground
+      source={bgBackground}
+      resizeMode="cover"
+      style={{
+        flex: 1,
+        width: "100%",
+        height: "100%",
+      }}
+      imageStyle={{
+        alignSelf: "center",
+      }}
+      className="relative mx-auto select-none"
+    >
+      <View
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(10, 20, 60, 0.5)",
+          zIndex: 0,
+        }}
+      />
+      <View className="relative z-10 flex-1">
         <StatusBar style="dark" />
         <Header
           isMenuOpen={isMenuOpen}
@@ -86,9 +111,7 @@ export default function App() {
           <Intro />
           <Page />
         </ScrollView>
-
-        {isMenuOpen && <MenuOverlay />}
-
+        {isMenuOpen && <MenuOverlay closeOverlays={closeOverlays} />}
         {isSearchOpen && (
           <SearchOverlay
             searchQuery={searchQuery}
@@ -96,7 +119,7 @@ export default function App() {
             searchResults={searchResults}
           />
         )}
-      </ImageBackground>
-    </>
+      </View>
+    </ImageBackground>
   );
 }
