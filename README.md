@@ -20,7 +20,7 @@ Soy desarrollador de software con enfoque en **IA**, **automatización** y **Dev
 
 | 🐍 **Backend & Scripts** | 💻 **Frontend** | ⚙️ **DevOps & Infra** |
 |--------------------------|----------------|------------------------|
-| <img src="https://skillicons.dev/icons?i=python,java,cs&theme=light" /> | <img src="https://skillicons.dev/icons?i=react,reactnative,javascript,typescript&theme=light" /> | <img src="https://skillicons.dev/icons?i=docker,linux,git,vscode&theme=light" /> |
+| <img src="https://skillicons.dev/icons?i=python,java,cs&theme=light" /> | <img src="https://skillicons.dev/icons?i=react,javascript,typescript&theme=light" /> | <img src="https://skillicons.dev/icons?i=docker,linux,git,vscode&theme=light" /> |
 
 </div>
 
