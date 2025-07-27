@@ -5,15 +5,34 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!email.trim() || !message.trim()) {
       Alert.alert("Error", "Por favor completa todos los campos.");
       return;
     }
 
-    Alert.alert("Mensaje enviado", "Gracias por contactarme.");
-    setEmail("");
-    setMessage("");
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxACooEC3z_F0ZmI8gguLurY6IapUGl3WLhiRsOl03EE_9ZIHhZ-ahEuTglmLQVTh0aUg/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, message }),
+        }
+      );
+
+      if (response.ok) {
+        Alert.alert("Mensaje enviado", "Gracias por contactarme.");
+        setEmail("");
+        setMessage("");
+      } else {
+        Alert.alert("Error", "Hubo un problema al enviar el mensaje.");
+      }
+    } catch (error) {
+      Alert.alert("Error", "No se pudo enviar el mensaje.");
+    }
   };
 
   return (
