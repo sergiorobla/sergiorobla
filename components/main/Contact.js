@@ -13,7 +13,7 @@ export default function Contact() {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxACooEC3z_F0ZmI8gguLurY6IapUGl3WLhiRsOl03EE_9ZIHhZ-ahEuTglmLQVTh0aUg/exec",
+        "https://hook.eu2.make.com/xakxil5ra5t4z3g46c4s70n9o5ow0v7f",
         {
           method: "POST",
           headers: {
