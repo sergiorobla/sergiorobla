@@ -3,6 +3,8 @@ import { StatusBar } from "expo-status-bar";
 import { SectionList, ImageBackground, View } from "react-native";
 import { useFonts } from "expo-font";
 import "./global.css";
+import { projects } from "./data/projects";
+import { questions } from "./data/questions";
 
 import Header from "./components/header/Header";
 import SearchOverlay from "./components/header/SearchOverlay";
@@ -33,14 +35,35 @@ export default function App() {
     }
   };
 
-  const mockData = [
-    "React",
-    "React Native",
-    "Next.js",
-    "Expo",
-    "Tailwind",
-    "Node.js",
-  ];
+  const keywordToSection = useMemo(() => {
+    const map = {};
+
+    projects.forEach((p) => {
+      const words = (p.title + " " + p.description + " " + p.lang.join(" "))
+        .toLowerCase()
+        .split(/[^A-Za-zÀ-ÖØ-öø-ÿ0-9]+/)
+        .filter(Boolean);
+      words.forEach((w) => {
+        map[w] = 1;
+      });
+    });
+
+    questions.forEach((q) => {
+      const words = (q.question + " " + q.answer)
+        .toLowerCase()
+        .split(/[^A-Za-zÀ-ÖØ-öø-ÿ0-9]+/)
+        .filter(Boolean);
+      words.forEach((w) => {
+        map[w] = 2;
+      });
+    });
+
+    return map;
+  }, [projects, questions]);
+
+  const allKeywords = useMemo(() => {
+    return Object.keys(keywordToSection);
+  }, [keywordToSection]);
 
   const [fontsLoaded] = useFonts({
     Inter: require("./assets/fonts/Inter-Light.ttf"),
@@ -59,11 +82,14 @@ export default function App() {
   }, [isSearchOpen, isMenuOpen]);
 
   const searchResults = useMemo(() => {
-    if (searchQuery.trim() === "") return [];
-    return mockData.filter((item) =>
-      item.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }, [searchQuery]);
+    if (!searchQuery.trim()) return [];
+    const query = searchQuery.toLowerCase();
+    return allKeywords.filter((word) => word.includes(query));
+  }, [searchQuery, allKeywords]);
+
+  const getSectionIndexFromResult = (result) => {
+    return keywordToSection[result.toLowerCase()] ?? 0;
+  };
 
   const toggleMenu = () => {
     const newMenuState = !isMenuOpen;
@@ -146,14 +172,14 @@ export default function App() {
           isSearchOpen={isSearchOpen}
           toggleMenu={toggleMenu}
           toggleSearch={toggleSearch}
+          closeOverlays={closeOverlays}
+          scrollToSection={scrollToSection}
         />
         <SectionList
           ref={sectionListRef}
           sections={sections}
           keyExtractor={(_, index) => index.toString()}
-          renderItem={({ section }) => {
-            section.renderItem();
-          }}
+          renderItem={({ section }) => section.renderItem()}
           stickySectionHeadersEnabled={false}
           showsVerticalScrollIndicator={false}
         />
@@ -169,6 +195,9 @@ export default function App() {
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
             searchResults={searchResults}
+            closeOverlays={closeOverlays}
+            scrollToSection={scrollToSection}
+            getSectionIndexFromResult={getSectionIndexFromResult}
           />
         )}
       </View>

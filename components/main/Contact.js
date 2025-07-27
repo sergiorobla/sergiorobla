@@ -11,7 +11,6 @@ export default function Contact() {
       return;
     }
 
-    // Aquí podrías integrar envío a una API o correo
     Alert.alert("Mensaje enviado", "Gracias por contactarme.");
     setEmail("");
     setMessage("");

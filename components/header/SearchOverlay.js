@@ -6,7 +6,16 @@ export default function SearchOverlay({
   searchQuery,
   setSearchQuery,
   searchResults,
+  closeOverlays,
+  scrollToSection,
+  getSectionIndexFromResult,
 }) {
+  const goToResult = (result) => {
+    closeOverlays();
+    const sectionIndex = getSectionIndexFromResult(result);
+    setTimeout(() => scrollToSection(sectionIndex), 100);
+  };
+
   return (
     <Animated.View
       entering={FadeIn.duration(300)}
@@ -47,9 +56,9 @@ export default function SearchOverlay({
         >
           {searchResults.length > 0 ? (
             searchResults.map((result, index) => (
-              <Text key={index} className="text-white text-lg mb-2">
-                {result}
-              </Text>
+              <Pressable key={index} onPress={() => goToResult(result)}>
+                <Text className="text-white text-lg mb-2">{result}</Text>
+              </Pressable>
             ))
           ) : searchQuery.length > 0 ? (
             <Text className="text-white/50 mt-4">

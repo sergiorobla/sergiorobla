@@ -15,7 +15,6 @@ export default function Intro() {
     return () => subscription?.remove();
   }, []);
 
-  // Cambia el tamaño dependiendo del ancho de la pantalla
   const imageSize = windowWidth >= 1280 ? 250 : 150;
   const textName = windowWidth >= 1280 ? 100 : 70;
   const marginTop = windowWidth >= 1280 ? 200 : 150;
