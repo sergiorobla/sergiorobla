@@ -1,14 +1,78 @@
 <img width="1035" height="241" alt="Sergio Robla" src="https://github.com/user-attachments/assets/cadc7e7d-96eb-4341-a0f5-fc43cf577ebf" />
 
-# Hola, soy Sergio Robla 👋
+# 👋 ¡Hola! Soy Sergio Robla
 
-Soy desarrollador/a de software con experiencia en **Python**, **JavaScript** y **DevOps**.
+Soy desarrollador de software con enfoque en **IA**, **automatización** y **DevOps**. Me apasiona crear soluciones inteligentes que optimicen procesos y generen impacto real. Tengo experiencia sólida en Python, JavaScript y entornos Linux.
 
-🚀 Actualmente trabajando en proyectos de inteligencia artificial y automatización.
+> “El código no debería complicar, sino simplificar lo complejo.”
 
-📫 Contacto: [sergiorobla36@gmail.com](mailto:sergiorobla36@gmail.com) | [LinkedIn](https://www.linkedin.com/in/sergiorobla/)
+- 🧠 Curioso por naturaleza y crítico con lo establecido  
+- 🚀 Actualmente trabajando en proyectos de **automatización con IA**  
+- 🌱 Explorando: Machine Learning, Rust, Cloud Infrastructure  
+- 📫 Contacto directo: [sergiorobla36@gmail.com](mailto:sergiorobla36@gmail.com)  
+- 🔗 [LinkedIn](https://www.linkedin.com/in/sergiorobla/) • [Portafolio Web](#) (si tienes uno)
 
-## Skills
+---
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+## 🧰 Skills técnicas
+
+<div align="center">
+
+| 🐍 **Backend & Scripts** | 💻 **Frontend** | ⚙️ **DevOps & Infra** |
+|--------------------------|----------------|------------------------|
+| <img src="https://skillicons.dev/icons?i=python,fastapi,nodejs,bash&theme=light" /> | <img src="https://skillicons.dev/icons?i=javascript,html,css&theme=light" /> | <img src="https://skillicons.dev/icons?i=docker,linux,git,vscode&theme=light" /> |
+
+</div>
+
+---
+
+## 📈 GitHub Stats
+
+<div align="center">
+
+<picture>
+  <source srcset="https://github-readme-stats.vercel.app/api?username=sergiorobla&show_icons=true&count_private=true&theme=github_dark&custom_title=GitHub%20Stats" media="(prefers-color-scheme: dark)" />
+  <source srcset="https://github-readme-stats.vercel.app/api?username=sergiorobla&show_icons=true&count_private=true&theme=default&custom_title=GitHub%20Stats" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+  <img src="https://github-readme-stats.vercel.app/api?username=sergiorobla&show_icons=true&count_private=true" alt="GitHub Stats" height="165" />
+</picture>
+
+<picture>
+  <source srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=sergiorobla&layout=compact&langs_count=10&theme=github_dark" media="(prefers-color-scheme: dark)" />
+  <source srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=sergiorobla&layout=compact&langs_count=10&theme=default" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sergiorobla&layout=compact&langs_count=10" alt="Top Languages" height="165" />
+</picture>
+
+</div>
+
+---
+
+## 🧩 Proyectos destacados
+
+| Proyecto | Descripción | Stack |
+|----------|-------------|-------|
+| [🔍 IA Automatizada](https://github.com/sergiorobla/ia-auto) | Sistema de detección inteligente de patrones en tiempo real. | Python, FastAPI, Docker |
+| [⚙️ RoblaCLI](https://github.com/sergiorobla/robla-cli) | Herramienta de terminal para automatizar tareas comunes en Linux. | Bash, Python |
+
+---
+
+## 🤝 ¿Colaboramos?
+
+Busco colaborar en proyectos que **tengan sentido** y construyan futuro. Si necesitas alguien que se mueva bien entre automatización, lógica y sistemas, contáctame.
+
+📨 [sergiorobla36@gmail.com](mailto:sergiorobla36@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/sergiorobla/)
+
+<a href="mailto:sergiorobla36@gmail.com">
+  <img src="https://img.shields.io/badge/💌%20Escríbeme-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
+
+---
+
+## 🧿 Visitas al perfil
+
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=sergiorobla.sergiorobla&left_color=blue&right_color=black)
+
+---
+
+> Hecho con pasión, claridad y propósito.  
+> Última actualización: `{{fecha_actual}}`
