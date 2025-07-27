@@ -1,6 +1,27 @@
 import { useState } from "react";
 import { View, Text, TextInput, Pressable } from "react-native-web";
-import Toast from "react-native-toast-message";
+import Toast, { BaseToast, ErrorToast } from "react-native-toast-message";
+
+const toastConfig = {
+  success: (props) => (
+    <BaseToast
+      {...props}
+      style={{ borderLeftColor: "green", backgroundColor: "#e6ffe6" }}
+      contentContainerStyle={{ paddingHorizontal: 15 }}
+      text1Style={{ color: "green", fontWeight: "bold" }}
+      text2Style={{ color: "darkgreen" }}
+    />
+  ),
+  error: (props) => (
+    <ErrorToast
+      {...props}
+      style={{ borderLeftColor: "red", backgroundColor: "#ffe6e6" }}
+      contentContainerStyle={{ paddingHorizontal: 15 }}
+      text1Style={{ color: "darkred", fontWeight: "bold" }}
+      text2Style={{ color: "red" }}
+    />
+  ),
+};
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -123,7 +144,7 @@ export default function Contact() {
         </View>
       </View>
 
-      <Toast />
+      <Toast config={toastConfig} topOffset={400} />
     </>
   );
 }

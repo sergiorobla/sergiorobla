@@ -2,7 +2,6 @@ import { useEffect, useState, useRef, useMemo } from "react";
 import { StatusBar } from "expo-status-bar";
 import { SectionList, ImageBackground, View } from "react-native";
 import { useFonts } from "expo-font";
-import Toast from "react-native-toast-message"; // <-- Importa Toast aquí
 import "./global.css";
 import { projects } from "./data/projects";
 import { questions } from "./data/questions";
@@ -202,7 +201,6 @@ export default function App() {
           />
         )}
       </View>
-      <Toast />
     </ImageBackground>
   );
 }
