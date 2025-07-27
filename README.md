@@ -10,7 +10,7 @@ Soy desarrollador de software con enfoque en **IA**, **automatización** y **Dev
 - 🚀 Actualmente trabajando en proyectos de **automatización con IA**  
 - 🌱 Explorando: Machine Learning, Rust, Cloud Infrastructure  
 - 📫 Contacto directo: [sergiorobla36@gmail.com](mailto:sergiorobla36@gmail.com)  
-- 🔗 [LinkedIn](https://www.linkedin.com/in/sergiorobla/) • [Portafolio Web](#) (si tienes uno)
+- 🔗 [LinkedIn](https://www.linkedin.com/in/sergiorobla/) • [https://sergiorobla.es/](#)
 
 ---
 
