@@ -54,7 +54,7 @@ Busco colaborar en proyectos que **tengan sentido** y construyan futuro. Si nece
 🔗 [LinkedIn](https://www.linkedin.com/in/sergiorobla/)
 
 <a href="https://www.linkedin.com/in/sergiorobla/">
-  <img src="https://img.shields.io/badge/💌%20Escríbeme-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+  <img src="https://img.shields.io/badge/%20Escríbeme-0D1117?style=for-the-badge&logo=linkedin&logoColor=white" />
 </a>
 
 ---
