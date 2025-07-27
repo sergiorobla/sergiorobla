@@ -1,4 +1,4 @@
-<img src="https://github.com/user-attachments/assets/f7cd9ef1-10be-42fb-ba3c-fe9211008d50" width="600" alt="Sergio Robla" style="border-radius: 12px;" />
+<img width="1035" height="241" alt="Sergio Robla" src="https://github.com/user-attachments/assets/7f933e34-a849-47d2-9896-5bed7cb3db34" />
 
 # Hola, soy Sergio Robla 👋
 
