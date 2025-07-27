@@ -53,7 +53,7 @@ Busco colaborar en proyectos que **tengan sentido** y construyan futuro. Si nece
 📨 [sergiorobla36@gmail.com](mailto:sergiorobla36@gmail.com)  
 🔗 [LinkedIn](https://www.linkedin.com/in/sergiorobla/)
 
-<a href="mailto:sergiorobla36@gmail.com">
+<a href="https://www.linkedin.com/in/sergiorobla/">
   <img src="https://img.shields.io/badge/💌%20Escríbeme-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
 </a>
 
