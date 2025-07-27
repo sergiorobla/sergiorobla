@@ -2,13 +2,13 @@
 
 # 👋 ¡Hola! Soy Sergio Robla
 
-Soy desarrollador de software con enfoque en **IA**, **automatización** y **DevOps**. Me apasiona crear soluciones inteligentes que optimicen procesos y generen impacto real. Tengo experiencia sólida en Python, JavaScript y entornos Linux.
+Soy desarrollador de software con enfoque en **IA**, **automatización** y **DevOps**. Me especializo en crear soluciones inteligentes que optimizan procesos y generan impacto real, trabajando principalmente en entornos **Windows**, **Linux** y **Android**. Tengo experiencia sólida en **Python**, **JavaScript**, así como en **React** y **React Native** para la creación de páginas web y aplicaciones Android optimizadas.
 
 > “El código no debería complicar, sino simplificar lo complejo.”
 
 - 🧠 Curioso por naturaleza y crítico con lo establecido  
-- 🚀 Actualmente trabajando en proyectos de **automatización con IA**  
-- 🌱 Explorando: Machine Learning, Rust, Cloud Infrastructure  
+- 🚀 Actualmente trabajando en proyectos de **autoaprendizaje continuo** 
+- 🌱 Explorando: Machine Learning y Cloud Infrastructure  
 - 📫 Contacto directo: [sergiorobla36@gmail.com](mailto:sergiorobla36@gmail.com)  
 - 🔗 [LinkedIn](https://www.linkedin.com/in/sergiorobla/) • [Portafolio personal](https://sergiorobla.es/)
 
