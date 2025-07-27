@@ -1,3 +1,5 @@
+<img width="2560" height="1440" alt="Sergio Robla" src="https://github.com/user-attachments/assets/193e0129-4915-45ed-9d70-67af5cc7589a" />
+
 # Hola, soy Sergio Robla 👋
 
 Soy desarrollador/a de software con experiencia en **Python**, **JavaScript** y **DevOps**.
