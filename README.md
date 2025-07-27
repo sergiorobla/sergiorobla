@@ -46,15 +46,6 @@ Soy desarrollador de software con enfoque en **IA**, **automatización** y **Dev
 
 ---
 
-## 🧩 Proyectos destacados
-
-| Proyecto | Descripción | Stack |
-|----------|-------------|-------|
-| [🔍 IA Automatizada](https://github.com/sergiorobla/ia-auto) | Sistema de detección inteligente de patrones en tiempo real. | Python, FastAPI, Docker |
-| [⚙️ RoblaCLI](https://github.com/sergiorobla/robla-cli) | Herramienta de terminal para automatizar tareas comunes en Linux. | Bash, Python |
-
----
-
 ## 🤝 ¿Colaboramos?
 
 Busco colaborar en proyectos que **tengan sentido** y construyan futuro. Si necesitas alguien que se mueva bien entre automatización, lógica y sistemas, contáctame.
@@ -71,8 +62,3 @@ Busco colaborar en proyectos que **tengan sentido** y construyan futuro. Si nece
 ## 🧿 Visitas al perfil
 
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=sergiorobla.sergiorobla&left_color=blue&right_color=black)
-
----
-
-> Hecho con pasión, claridad y propósito.  
-> Última actualización: `{{fecha_actual}}`
