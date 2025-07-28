@@ -1,4 +1,12 @@
-import { View, Text, TextInput, ScrollView, Pressable } from "react-native";
+import { useState, useEffect } from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  ScrollView,
+  Pressable,
+  Dimensions,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Animated, { FadeIn, FadeOut } from "react-native-reanimated";
 
@@ -10,6 +18,19 @@ export default function SearchOverlay({
   scrollToSection,
   getSectionIndexFromResult,
 }) {
+  const [height, setHeight] = useState(Dimensions.get("window").height);
+
+  useEffect(() => {
+    const onChange = ({ window }) => {
+      setHeight(window.height);
+    };
+    const subscription = Dimensions.addEventListener("change", onChange);
+
+    return () => {
+      subscription?.remove();
+    };
+  }, []);
+
   const goToResult = (result) => {
     closeOverlays();
     const sectionIndex = getSectionIndexFromResult(result);
@@ -20,7 +41,14 @@ export default function SearchOverlay({
     <Animated.View
       entering={FadeIn.duration(300)}
       exiting={FadeOut.duration(300)}
-      className="absolute top-0 left-0 w-full h-full z-40"
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height,
+        zIndex: 40,
+      }}
     >
       <View
         style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}

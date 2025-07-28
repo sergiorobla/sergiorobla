@@ -3,6 +3,8 @@ import { StatusBar } from "expo-status-bar";
 import { SectionList, ImageBackground, View } from "react-native";
 import { useFonts } from "expo-font";
 import "./global.css";
+import Toast from "react-native-toast-message";
+import { toastConfig } from "./components/main/toastConfig";
 import { projects } from "./data/projects";
 import { questions } from "./data/questions";
 
@@ -24,6 +26,7 @@ export default function App() {
 
   const sectionListRef = useRef(null);
 
+  // Scroll a sección específica
   const scrollToSection = (index) => {
     if (sectionListRef.current) {
       sectionListRef.current.scrollToLocation({
@@ -35,35 +38,30 @@ export default function App() {
     }
   };
 
+  // Mapa de palabras clave a sección
   const keywordToSection = useMemo(() => {
     const map = {};
-
     projects.forEach((p) => {
       const words = (p.title + " " + p.description + " " + p.lang.join(" "))
         .toLowerCase()
         .split(/[^A-Za-zÀ-ÖØ-öø-ÿ0-9]+/)
         .filter(Boolean);
-      words.forEach((w) => {
-        map[w] = 1;
-      });
+      words.forEach((w) => (map[w] = 1));
     });
-
     questions.forEach((q) => {
       const words = (q.question + " " + q.answer)
         .toLowerCase()
         .split(/[^A-Za-zÀ-ÖØ-öø-ÿ0-9]+/)
         .filter(Boolean);
-      words.forEach((w) => {
-        map[w] = 2;
-      });
+      words.forEach((w) => (map[w] = 2));
     });
-
     return map;
-  }, [projects, questions]);
+  }, []);
 
-  const allKeywords = useMemo(() => {
-    return Object.keys(keywordToSection);
-  }, [keywordToSection]);
+  const allKeywords = useMemo(
+    () => Object.keys(keywordToSection),
+    [keywordToSection]
+  );
 
   const [fontsLoaded] = useFonts({
     Inter: require("./assets/fonts/Inter-Light.ttf"),
@@ -76,82 +74,65 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (!isSearchOpen || isMenuOpen) {
-      setSearchQuery("");
-    }
+    if (!isSearchOpen || isMenuOpen) setSearchQuery("");
   }, [isSearchOpen, isMenuOpen]);
 
+  // Resultados filtrados para búsqueda
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
     const query = searchQuery.toLowerCase();
     return allKeywords.filter((word) => word.includes(query));
   }, [searchQuery, allKeywords]);
 
-  const getSectionIndexFromResult = (result) => {
-    return keywordToSection[result.toLowerCase()] ?? 0;
-  };
+  const getSectionIndexFromResult = (result) =>
+    keywordToSection[result.toLowerCase()] ?? 0;
 
+  // Handlers para abrir/cerrar menús y búsqueda
   const toggleMenu = () => {
     const newMenuState = !isMenuOpen;
     setIsMenuOpen(newMenuState);
     if (newMenuState) setIsSearchOpen(false);
   };
-
   const closeOverlays = () => {
     setIsMenuOpen(false);
     setIsSearchOpen(false);
   };
-
   const toggleSearch = () => {
     const newSearchState = !isSearchOpen;
     setIsSearchOpen(newSearchState);
     if (newSearchState) setIsMenuOpen(false);
   };
 
-  if (!fontsLoaded) {
-    return null;
-  }
+  const showToast = (type, text1, text2) => {
+    Toast.show({ type, text1, text2 });
+  };
+
+  if (!fontsLoaded) return null;
 
   const sections = [
-    {
-      title: "Inicio",
-      data: [""],
-      renderItem: () => <Intro />,
-    },
-    {
-      title: "Proyectos",
-      data: [""],
-      renderItem: () => <Projects />,
-    },
-    {
-      title: "Sobre mí",
-      data: [""],
-      renderItem: () => <FrequentQuestion />,
-    },
+    { title: "Inicio", data: [{}], renderItem: () => <Intro /> },
+    { title: "Proyectos", data: [{}], renderItem: () => <Projects /> },
+    { title: "Sobre mí", data: [{}], renderItem: () => <FrequentQuestion /> },
     {
       title: "Contacto",
-      data: [""],
-      renderItem: () => <Contact />,
+      data: [{}],
+      renderItem: () => (
+        <Contact
+          onMessageSent={() =>
+            showToast("success", "Mensaje enviado.", "Gracias por contactarme.")
+          }
+        />
+      ),
     },
-    {
-      title: "Footer",
-      data: [""],
-      renderItem: () => <Footer />,
-    },
+    { title: "Footer", data: [{}], renderItem: () => <Footer /> },
   ];
 
   return (
     <ImageBackground
       source={bgBackground}
       resizeMode="cover"
-      style={{
-        flex: 1,
-        width: "100%",
-        height: "100%",
-      }}
-      imageStyle={{
-        alignSelf: "center",
-      }}
+      style={{ flex: 1, width: "100%", height: "100%" }}
+      imageStyle={{ alignSelf: "center" }}
       className="relative mx-auto select-none"
     >
       <View
@@ -183,7 +164,6 @@ export default function App() {
           stickySectionHeadersEnabled={false}
           showsVerticalScrollIndicator={false}
         />
-
         {isMenuOpen && (
           <MenuOverlay
             closeOverlays={closeOverlays}
@@ -200,6 +180,20 @@ export default function App() {
             getSectionIndexFromResult={getSectionIndexFromResult}
           />
         )}
+      </View>
+
+      <View
+        style={{
+          position: "absolute",
+          top: 50,
+          left: 0,
+          right: 0,
+          zIndex: 1000,
+          alignItems: "center",
+        }}
+        pointerEvents="box-none"
+      >
+        <Toast config={toastConfig} />
       </View>
     </ImageBackground>
   );

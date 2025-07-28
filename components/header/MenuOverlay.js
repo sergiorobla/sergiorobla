@@ -1,7 +1,21 @@
-import { View, Text, ScrollView, Pressable } from "react-native";
+import { useState, useEffect } from "react";
+import { View, Text, ScrollView, Pressable, Dimensions } from "react-native";
 import Animated, { FadeIn, FadeOut } from "react-native-reanimated";
 
 export default function MenuOverlay({ closeOverlays, scrollToSection }) {
+  const [height, setHeight] = useState(Dimensions.get("window").height);
+
+  useEffect(() => {
+    const onChange = ({ window }) => {
+      setHeight(window.height);
+    };
+    const subscription = Dimensions.addEventListener("change", onChange);
+
+    return () => {
+      subscription?.remove();
+    };
+  }, []);
+
   const goTo = (index) => {
     closeOverlays();
     setTimeout(() => scrollToSection(index), 100);
@@ -11,7 +25,14 @@ export default function MenuOverlay({ closeOverlays, scrollToSection }) {
     <Animated.View
       entering={FadeIn.duration(300)}
       exiting={FadeOut.duration(300)}
-      className="absolute top-0 left-0 w-full h-full z-40"
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height,
+        zIndex: 40,
+      }}
     >
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View
